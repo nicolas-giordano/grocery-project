@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
 
     'pages.apps.PagesConfig',
+    'data.apps.DataConfig',
 ]
 
 MIDDLEWARE = [
