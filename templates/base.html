@@ -37,10 +37,9 @@
 									Stores
 								</a>
 								<ul class="dropdown-menu dropdown-menu-left" aria-labelledby='navbarDropdown'>
-									<li><a class='dropdown-item' href="#">Fry's</a></li>
-									<li><a class='dropdown-item' href="#">Safeway</a></li>
-									<li><a class='dropdown-item' href="#">Trader Joe's</a></li>
-									<li><a class='dropdown-item' href="#">Walmart</a></li>
+									{% for store in store_list %}
+										<li><a class='dropdown-item' href="#">{{store.name}}</a></li>
+									{% endfor %}
 								</ul>
 							</li>
 							<li class="nav-item md-font">
