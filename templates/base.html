@@ -37,8 +37,8 @@
 									Stores
 								</a>
 								<ul class="dropdown-menu dropdown-menu-left" aria-labelledby='navbarDropdown'>
-									{% for store in store_list %}
-										<li><a class='dropdown-item' href="#">{{store.name}}</a></li>
+									{% for store in stores %}
+										<li><a class='dropdown-item' href="{% url 'store' store.pk %}">{{store.name}}</a></li>
 									{% endfor %}
 								</ul>
 							</li>

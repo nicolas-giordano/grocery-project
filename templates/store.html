@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{store.name}}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h2>{{store.name}}</h2>
+    {% for item in store.items.all %}
+        {% if item.price == 0.00 %}
+            <p>{{item.item}}: ${{item.price_per_lb}}/lb</p>
+        {% else %}
+            <p>{{item.item}}: ${{item.price}}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock content %}
