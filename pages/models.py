@@ -15,3 +15,15 @@ class Item(models.Model):
 
     def __str__(self) -> str:
         return self.item
+
+
+class StoreItems(models.Model):
+    store = models.ForeignKey(
+        Store, on_delete=models.CASCADE, related_name='items')
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=5, decimal_places=2, default=0.0)
+    price_per_lb = models.DecimalField(
+        max_digits=5, decimal_places=2, default=0.0)
+
+    def __str__(self) -> str:
+        return f"Store: {self.store}, Item: {self.item}"
