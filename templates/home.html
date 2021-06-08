@@ -6,11 +6,11 @@
 
     <div class="container-fluid px-4">
         <p class='text-center pt-4 md-font'>Search a product to see if we have any pricing data on that product.</p>
-        <form action="{% url 'search_result' %}" class='d-flex flex-column' method='GET'>
+        <form action="{% url 'search_result' %}" class='d-flex flex-column' method='GET' autocomplete='off'>
             <div class="form-group">
                 <input class='form-control w-50 mx-auto mb-3 md-font' type="text" name="query" placeholder='Find a price...'>
             </div>
-            {% comment %} <button type="submit" class='btn btn-success mx-auto md-font'>Search</button> {% endcomment %}
+            <button type="submit" class='btn btn-success mx-auto md-font'>Search</button>
         </form>
         <a href=""><p class='mt-4 text-center md-font'>Have a grocery list you wish to find the best deal on?</p></a>
     </div>
