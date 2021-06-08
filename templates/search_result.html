@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}Search{% endblock title %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    {% for item in item_list  %}
+        <p>{{item.store}}, {{item.item}}</p>
+    {% endfor %}
+{% endblock content %}
