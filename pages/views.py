@@ -44,3 +44,12 @@ class SearchResultsPageView(ListView):
         context = super(SearchResultsPageView, self).get_context_data(**kwargs)
         context['stores'] = Store.objects.all()
         return context
+
+
+class GroceryListPageView(TemplateView):
+    template_name = 'grocery_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(GroceryListPageView, self).get_context_data(**kwargs)
+        context['stores'] = Store.objects.all()
+        return context
