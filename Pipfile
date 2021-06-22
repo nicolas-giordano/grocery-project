@@ -8,6 +8,9 @@ django = "*"
 psycopg2-binary = "*"
 environs = {extras = ["django"], version = "*"}
 django-debug-toolbar = "*"
+whitenoise = "==4.1.4"
+gunicorn = "==19.9.0"
+dj-database-url = "==0.5.0"
 
 [dev-packages]
 
