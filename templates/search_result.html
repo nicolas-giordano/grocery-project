@@ -5,31 +5,35 @@
 {% block content %}
     <div class="container">
         <h1 class='mt-3 mb-3 text-center'>Search Results</h1>
-        <table class="table table-hover table-light">
-            <thead>
-                <tr>
-                    <th scope='col'>Product</th>
-                    <th scope='col'>Price</th>
-                    <th scope='col'>Price per lb</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in item_list %}
+        {% if item.count > 0 %}
+            <table class="table table-hover table-light">
+                <thead>
                     <tr>
-                        <th scope='row'>{{item.item}}</th>
-                        {% if item.price == 0.00 %}
-                            <th scope='row'>-</th>
-                        {% else %}
-                            <th scope='row'>${{item.price}}</th>
-                        {% endif %}
-                        {% if item.price_per_lb == 0.00 %}
-                            <th scope='row'>-</th>
-                        {% else %}
-                            <th scope='row'>${{item.price_per_lb}}</th>
-                        {% endif %}
-                {% endfor %}    
+                        <th scope='col'>Product</th>
+                        <th scope='col'>Price</th>
+                        <th scope='col'>Price per lb</th>
                     </tr>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    {% for item in item_list %}
+                        <tr>
+                            <th scope='row'>{{item.item}}</th>
+                            {% if item.price == 0.00 %}
+                                <th scope='row'>-</th>
+                            {% else %}
+                                <th scope='row'>${{item.price}}</th>
+                            {% endif %}
+                            {% if item.price_per_lb == 0.00 %}
+                                <th scope='row'>-</th>
+                            {% else %}
+                                <th scope='row'>${{item.price_per_lb}}</th>
+                            {% endif %}
+                    {% endfor %}    
+                        </tr>
+                </tbody>
+            </table>
+        {% else %}
+            <h5>Sorry, we currently have no data on the item you are looking for.</h2>
+        {% endif %}
     </div>
 {% endblock content %}

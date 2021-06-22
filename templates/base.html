@@ -11,7 +11,7 @@
 		<link 
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"
 		>
-		<title>{% block title %}Bookstore{% endblock%}</title>
+		<title>{% block title %}BestPrices{% endblock%}</title>
 	</head>
 	<body>
 		<header>
@@ -38,13 +38,12 @@
 								</a>
 								<ul class="dropdown-menu dropdown-menu-left" aria-labelledby='navbarDropdown'>
 									{% for store in stores %}
-										<li><a class='dropdown-item' href="{% url 'store' store.pk %}">{{store.name}}</a></li>
+										{% if store.items.count > 0 %}
+											<li><a class='dropdown-item' href="{% url 'store' store.pk %}">{{store.name}}</a></li>
+										{% endif %}
 									{% endfor %}
 								</ul>
 							</li>
-							{% comment %} <li class="nav-item md-font">
-								<a href="{% url 'list' %}" class="nav-link">Grocery List</a>
-							</li> {% endcomment %}
 							<li class='nav-item md-font'>
 								<a class='nav-link' href="{% url 'about' %}">About</a>
 							</li>
