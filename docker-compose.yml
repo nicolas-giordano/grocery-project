@@ -13,7 +13,6 @@ services:
       - db
     environment:
       - "ENVIRONMENT=development"
-      - "SECRET_KEY=django-insecure-ok-g$$+c!nqu)$$!kv=pt14p6f@3qy)2_ln71(h7ubm9ti#fm)o1"
       - "DEBUG=1"
   db:
     image: postgres:11
